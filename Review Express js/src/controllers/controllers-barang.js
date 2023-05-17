@@ -53,7 +53,7 @@ const addDataBarang = async(req,res) => {
         total_harga:total_semua
     }
    try{
-    const reslt = await new Promise((resolve,reject) => {
+    const result = await new Promise((resolve,reject) => {
         connection.query("INSERT INTO barang set ?; ", [data], function(error,rows){
             if(rows){
                 resolve(true)
@@ -100,7 +100,7 @@ const editDataBarang  = async(req,res) => {
     }
 
     try{
-        const resut = await new Promise((resolve,reject) => {
+        const result = await new Promise((resolve,reject) => {
             connection.query('UPDATE barang SET ? WHERE kode_barang = ?;', [dataEdit,kode_barang], function(error,rows) {
                 if(rows) {
                     resolve(true)
